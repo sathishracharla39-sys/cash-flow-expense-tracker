@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/1afa363563.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+        <i class="fa-solid fa-coins"></i>
+        <div>
+            <h1 class="logo-element">Cash-Flow</h1>
+            <p class="logo-element">Salary & Expense Tracker</p>
+        </div>
+        </div>
+        <div>
+        <a href="#sectiondashboard">Dashboard</a>
+        <a href="#inputform">Add Expense</a>
+        <a href="#sectionexpenses">Expenses</a>
+        <a href="#sectionreports">Reports</a>
+        
+        <i class="fa-regular fa-moon dark-mode" id="darkTheme"></i>
+        </div>
+    </nav>
+    <div class="hero-section" id="sectiondashboard">
+        <h1>Financial Dashboard</h1>
+        <p>Track your expenses smartly</p>
+    </div>
+    <div class="cards-container">
+        <div class="card">
+            <p>Total Salary</p>
+            <h1>₹<span id="salaryCard">80,000</span></h1>
+            <p>Monthly Income</p>
+        </div>
+        <div class="card">
+            <p>Total Expenses</p>
+            <h1>₹<span id="totalExpenseCard">80,000</span></h1>
+            <p>This Month</p>
+        </div>
+        <div class="card">
+            <p>Remaining Balance</p>
+            <h1>₹<span id="balanceCard">80,000</span></h1>
+            <p id="usdBalance"></p>
+            <p>Available Balance</p>
+            <p id="warningMsg"></p>
+        </div>
+    </div>
+    <div class="btm-container">
+        <form id="inputform" class="addform">
+            <h1>Add Expense</h1>
+            <label for="salary">Total Salary</label>
+            <input type="number" id="salary" class="inputbox" placeholder="Enter Salary"/>
+            <p id="salaryErrMsg" class="errmsg"></p>
+            <label for="name" >Expense Name</label>
+            <input type="text" id="name" class="inputbox" placeholder="Enter expense name"/>
+            <p id="nameErrMsg" class="errmsg"></p>
+            <label for="amount" >Expense Amount</label>
+            <input type="number" id="amount" class="inputbox" placeholder="Enter amount"/>
+            <p id="amountErrMsg" class="errmsg"></p>
+            <button type="submit" class="add-btn">Add Expense</button>
+        </form>
+        <div class="expense-cont" id="sectionexpenses">
+            <h1>Expenses List</h1>
+            <div id="expenseList"></div>
+        </div>
+        <div class="graph-cont" id="sectionreports">
+            <h1>Balance Overview</h1>
+            <canvas id="expenseChart"></canvas>
+        </div>
+        
+    </div>
+    <button id="downloadBtn" class="add-btn download-btn">Download Report</button>
+</body>
+</html>
